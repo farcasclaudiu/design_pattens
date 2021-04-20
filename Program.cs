@@ -7,6 +7,7 @@ using design_patterns.creational.factory;
 using design_patterns.creational.facadebuilder;
 using design_patterns.creational.singleton;
 using design_patterns.creational.prototype;
+using design_patterns.structural.adapter;
 
 namespace design_patterns
 {
@@ -23,7 +24,10 @@ namespace design_patterns
                 // await FunctionalBuilderSample.Run();
                 // await FacadeBuilderSample.Run();
                 // await SingletonSample.Run();
-                await PrototypeSample.Run();
+                // await PrototypeSample.Run();
+
+                // structural
+                await AdapterSample.Run();
             }
             catch (System.Exception ex)
             {
