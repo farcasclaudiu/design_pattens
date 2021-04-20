@@ -8,6 +8,7 @@ using design_patterns.creational.facadebuilder;
 using design_patterns.creational.singleton;
 using design_patterns.creational.prototype;
 using design_patterns.structural.adapter;
+using design_patterns.structural.bridge;
 
 namespace design_patterns
 {
@@ -27,7 +28,8 @@ namespace design_patterns
                 // await PrototypeSample.Run();
 
                 // structural
-                await AdapterSample.Run();
+                // await AdapterSample.Run();
+                await BridgeSample.Run();
             }
             catch (System.Exception ex)
             {
