@@ -9,6 +9,7 @@ using design_patterns.creational.singleton;
 using design_patterns.creational.prototype;
 using design_patterns.structural.adapter;
 using design_patterns.structural.bridge;
+using design_patterns.structural.composite;
 
 namespace design_patterns
 {
@@ -29,7 +30,8 @@ namespace design_patterns
 
                 // structural
                 // await AdapterSample.Run();
-                await BridgeSample.Run();
+                // await BridgeSample.Run();
+                await CompositeSample.Run();
             }
             catch (System.Exception ex)
             {
