@@ -11,6 +11,7 @@ using design_patterns.structural.adapter;
 using design_patterns.structural.bridge;
 using design_patterns.structural.composite;
 using design_patterns.structural.decorator;
+using design_patterns.structural.facade;
 
 namespace design_patterns
 {
@@ -33,7 +34,8 @@ namespace design_patterns
                 // await AdapterSample.Run();
                 // await BridgeSample.Run();
                 // await CompositeSample.Run();
-                await DecoratorSample.Run();
+                // await DecoratorSample.Run();
+                await FacadeSample.Run();
             }
             catch (System.Exception ex)
             {
