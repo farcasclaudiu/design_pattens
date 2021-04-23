@@ -12,6 +12,8 @@ using design_patterns.structural.bridge;
 using design_patterns.structural.composite;
 using design_patterns.structural.decorator;
 using design_patterns.structural.facade;
+using design_patterns.structural.flyweight;
+using design_patterns.structural.proxy;
 
 namespace design_patterns
 {
@@ -35,7 +37,9 @@ namespace design_patterns
                 // await BridgeSample.Run();
                 // await CompositeSample.Run();
                 // await DecoratorSample.Run();
-                await FacadeSample.Run();
+                // await FacadeSample.Run();
+                // await FlyweightSample.Run();
+                await ProxySample.Run();
             }
             catch (System.Exception ex)
             {
