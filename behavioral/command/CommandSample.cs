@@ -60,6 +60,7 @@ namespace design_patterns.behavioral.command
         public void Execute()
         {
             Console.WriteLine($"Execute add order command for order {Order.ID}");
+            // this should be set by a command processor externally
             HasSucceded = true;
         }
 
@@ -80,6 +81,7 @@ namespace design_patterns.behavioral.command
         public void Execute()
         {
             Console.WriteLine($"Execute remove order command for order {OrderID}");
+            // this should be set by a command processor externally
             // FORCE failure
             HasSucceded = false;
         }
