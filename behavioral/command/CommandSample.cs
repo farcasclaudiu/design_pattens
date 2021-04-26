@@ -1,5 +1,7 @@
+using System.Windows.Input;
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace design_patterns.behavioral.command
 {
@@ -25,26 +27,47 @@ namespace design_patterns.behavioral.command
             var order = new Order {
                 ID = Guid.NewGuid().ToString()
             };
-            ICommand addCommand = new AddOrderCommand(order);
-            addCommand.Execute();
-            ICommand removeCommand = new RemoveOrderCommand(order.ID);
-            removeCommand.Execute();
+            List<ICommand> operations = new List<ICommand>();
+            operations.Add(new AddOrderCommand(order));
+            operations.Add(new RemoveOrderCommand(order.ID));
+            
+            // batch execution
+            foreach(var cmd in operations){
+                cmd.Execute();
+            }
+            // undo
+            operations.Reverse();
+            foreach(var cmd in operations){
+                cmd.Undo();
+            }
         }
     }
 
     public interface ICommand
     {
+        bool HasSucceded {get;set;}
+
         void Execute();
+        void Undo();
     }
 
     public class AddOrderCommand : ICommand {
         public AddOrderCommand(Order order) => this.Order = order;
 
         public Order Order { get; private set; }
+        public bool HasSucceded { get; set; }
 
         public void Execute()
         {
             Console.WriteLine($"Execute add order command for order {Order.ID}");
+            HasSucceded = true;
+        }
+
+        public void Undo()
+        {
+            if(HasSucceded){
+                Console.WriteLine($"UNDO - add order for order {Order.ID}");
+            }
         }
     }
 
@@ -52,10 +75,20 @@ namespace design_patterns.behavioral.command
         public RemoveOrderCommand(string orderId) => this.OrderID = orderId;
 
         public string OrderID { get; private set; }
+        public bool HasSucceded { get; set; }
 
         public void Execute()
         {
             Console.WriteLine($"Execute remove order command for order {OrderID}");
+            // FORCE failure
+            HasSucceded = false;
+        }
+
+        public void Undo()
+        {
+            if(HasSucceded){
+                Console.WriteLine($"UNDO - remove order for order {OrderID}");
+            }
         }
     }
 
