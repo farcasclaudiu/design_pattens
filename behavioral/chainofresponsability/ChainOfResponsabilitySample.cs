@@ -1,6 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using System.Collections.Generic
 
 namespace design_patterns.behavioral.chainofresponsability
 {
@@ -29,16 +28,18 @@ namespace design_patterns.behavioral.chainofresponsability
                 Date = DateTime.Now
             };
             
+            //define chain of handlers
             var handler = new BaseReqHandler { Request = request };
             handler.Add(new SecurityCheckReqHandler(false));
             handler.Add(new DataValidationReqHandler());
-
+            // issue the handler
             handler.Handle();
 
+            //define chain of handlers
             handler = new BaseReqHandler { Request = request };
             handler.Add(new SecurityCheckReqHandler(true));
             handler.Add(new DataValidationReqHandler());
-
+            // issue the handler
             handler.Handle();
         }
     }
@@ -47,6 +48,9 @@ namespace design_patterns.behavioral.chainofresponsability
         RequestInfo Request {get; set;}
         void Add(IReqHandler reqHandler);
         void Handle();
+        // alternatively we can invoke Handle with the main request object
+        // instead storing it as property
+        // void Handle(RequestInfo request);
     }
 
     public class BaseReqHandler : IReqHandler {
