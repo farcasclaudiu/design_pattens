@@ -14,6 +14,7 @@ using design_patterns.structural.decorator;
 using design_patterns.structural.facade;
 using design_patterns.structural.flyweight;
 using design_patterns.structural.proxy;
+using design_patterns.behavioral.chainofresponsability;
 
 namespace design_patterns
 {
@@ -39,7 +40,10 @@ namespace design_patterns
                 // await DecoratorSample.Run();
                 // await FacadeSample.Run();
                 // await FlyweightSample.Run();
-                await ProxySample.Run();
+                // await ProxySample.Run();
+
+                // behavioral
+                await ChainOfResponsabilitySample.Run();
             }
             catch (System.Exception ex)
             {
