@@ -18,6 +18,7 @@ using design_patterns.behavioral.chainofresponsability;
 using design_patterns.behavioral.command;
 using design_patterns.behavioral.iterator;
 using design_patterns.behavioral.mediator;
+using design_patterns.behavioral.memento;
 
 namespace design_patterns
 {
@@ -49,7 +50,8 @@ namespace design_patterns
                 // await ChainOfResponsabilitySample.Run();
                 // await CommandSample.Run();
                 // await IteratorSample.Run();
-                await MediatorSample.Run();
+                // await MediatorSample.Run();
+                await MementoSample.Run();
             }
             catch (System.Exception ex)
             {
