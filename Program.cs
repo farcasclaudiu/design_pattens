@@ -17,6 +17,7 @@ using design_patterns.structural.proxy;
 using design_patterns.behavioral.chainofresponsability;
 using design_patterns.behavioral.command;
 using design_patterns.behavioral.iterator;
+using design_patterns.behavioral.mediator;
 
 namespace design_patterns
 {
@@ -47,7 +48,8 @@ namespace design_patterns
                 // behavioral
                 // await ChainOfResponsabilitySample.Run();
                 // await CommandSample.Run();
-                await IteratorSample.Run();
+                // await IteratorSample.Run();
+                await MediatorSample.Run();
             }
             catch (System.Exception ex)
             {
