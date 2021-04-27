@@ -19,6 +19,7 @@ using design_patterns.behavioral.command;
 using design_patterns.behavioral.iterator;
 using design_patterns.behavioral.mediator;
 using design_patterns.behavioral.memento;
+using design_patterns.behavioral.observer;
 
 namespace design_patterns
 {
@@ -51,7 +52,8 @@ namespace design_patterns
                 // await CommandSample.Run();
                 // await IteratorSample.Run();
                 // await MediatorSample.Run();
-                await MementoSample.Run();
+                // await MementoSample.Run();
+                await ObserverSample.Run();
             }
             catch (System.Exception ex)
             {
