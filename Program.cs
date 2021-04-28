@@ -21,6 +21,7 @@ using design_patterns.behavioral.mediator;
 using design_patterns.behavioral.memento;
 using design_patterns.behavioral.observer;
 using design_patterns.behavioral.state;
+using design_patterns.behavioral.strategy;
 
 namespace design_patterns
 {
@@ -55,7 +56,8 @@ namespace design_patterns
                 // await MediatorSample.Run();
                 // await MementoSample.Run();
                 // await ObserverSample.Run();
-                await StateSample.Run();
+                // await StateSample.Run();
+                await StrategySample.Run();
             }
             catch (System.Exception ex)
             {
