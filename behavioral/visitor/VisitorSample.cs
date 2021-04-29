@@ -28,20 +28,20 @@ namespace design_patterns.behavioral.visitor
             Visitor1 visitor1 = new Visitor1();
             foreach (var component in components)
             {
-                component.Visit(visitor1);
+                component.Receive(visitor1);
             }
 
             System.Console.WriteLine("With Visitor2 ....");
             Visitor2 visitor2 = new Visitor2();
             foreach (var component in components)
             {
-                component.Visit(visitor2);
+                component.Receive(visitor2);
             }
         }
 
         // implemented by components/hierarchy that needs to be visited
         public interface IComponent {
-            void Visit(IVisitor visitor);
+            void Receive(IVisitor visitor);
         }
 
         public class ComponentA : IComponent {
@@ -49,7 +49,7 @@ namespace design_patterns.behavioral.visitor
                 System.Console.WriteLine("IamComponentA");
             }
 
-            public void Visit(IVisitor visitor)
+            public void Receive(IVisitor visitor)
             {
                 visitor.Visit(this);
             }
@@ -60,7 +60,7 @@ namespace design_patterns.behavioral.visitor
                 System.Console.WriteLine("SomeStuffFromComponentB");
             }
 
-            public void Visit(IVisitor visitor)
+            public void Receive(IVisitor visitor)
             {
                 visitor.Visit(this);
             }
