@@ -22,6 +22,7 @@ using design_patterns.behavioral.memento;
 using design_patterns.behavioral.observer;
 using design_patterns.behavioral.state;
 using design_patterns.behavioral.strategy;
+using design_patterns.behavioral.template;
 
 namespace design_patterns
 {
@@ -57,7 +58,8 @@ namespace design_patterns
                 // await MementoSample.Run();
                 // await ObserverSample.Run();
                 // await StateSample.Run();
-                await StrategySample.Run();
+                // await StrategySample.Run();
+                await TemplateSample.Run();
             }
             catch (System.Exception ex)
             {
