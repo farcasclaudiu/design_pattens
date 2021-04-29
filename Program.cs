@@ -23,6 +23,7 @@ using design_patterns.behavioral.observer;
 using design_patterns.behavioral.state;
 using design_patterns.behavioral.strategy;
 using design_patterns.behavioral.template;
+using design_patterns.behavioral.visitor;
 
 namespace design_patterns
 {
@@ -59,7 +60,8 @@ namespace design_patterns
                 // await ObserverSample.Run();
                 // await StateSample.Run();
                 // await StrategySample.Run();
-                await TemplateSample.Run();
+                // await TemplateSample.Run();
+                await VisitorSample.Run();
             }
             catch (System.Exception ex)
             {
