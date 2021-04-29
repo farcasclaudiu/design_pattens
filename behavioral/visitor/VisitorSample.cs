@@ -51,7 +51,7 @@ namespace design_patterns.behavioral.visitor
 
             public void Visit(IVisitor visitor)
             {
-                visitor.VisitComponentA(this);
+                visitor.Visit(this);
             }
         }
 
@@ -62,7 +62,7 @@ namespace design_patterns.behavioral.visitor
 
             public void Visit(IVisitor visitor)
             {
-                visitor.VisitComponentB(this);
+                visitor.Visit(this);
             }
         }
 
@@ -71,19 +71,20 @@ namespace design_patterns.behavioral.visitor
         // visitor to identify the exact class of the component that it's dealing
         // with.
         public interface IVisitor {
-            void VisitComponentA(ComponentA component);
-            void VisitComponentB(ComponentB component);
+            // with overloads
+            void Visit(ComponentA component);
+            void Visit(ComponentB component);
         }
 
         public class Visitor1 : IVisitor
         {
-            public void VisitComponentA(ComponentA component)
+            public void Visit(ComponentA component)
             {
                 System.Console.Write($"From {this.GetType().Name} ");
                 component.IamComponentA();
             }
 
-            public void VisitComponentB(ComponentB component)
+            public void Visit(ComponentB component)
             {
                 System.Console.Write($"From {this.GetType().Name} ");
                 component.SomeStuffFromComponentB();
@@ -92,13 +93,13 @@ namespace design_patterns.behavioral.visitor
 
         public class Visitor2 : IVisitor
         {
-            public void VisitComponentA(ComponentA component)
+            public void Visit(ComponentA component)
             {
                 System.Console.Write($"From {this.GetType().Name} ");
                 component.IamComponentA();
             }
 
-            public void VisitComponentB(ComponentB component)
+            public void Visit(ComponentB component)
             {
                 System.Console.Write($"From {this.GetType().Name} ");
                 component.SomeStuffFromComponentB();
